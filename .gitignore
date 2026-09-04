@@ -7,6 +7,8 @@
 # Node.js
 node_modules/
 package-lock.json
+*.bak
+*.before-local-install.json
 
 # Build directories
 build/

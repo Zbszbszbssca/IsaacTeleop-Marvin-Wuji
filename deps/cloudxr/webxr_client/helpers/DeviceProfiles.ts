@@ -86,8 +86,8 @@ const QUEST3_PROFILE: DeviceProfile = {
   cloudxr: {
     perEyeWidth: 2048,
     perEyeHeight: 1792,
-    deviceFrameRate: 90,
-    maxStreamingBitrateKbps: 150000,
+    deviceFrameRate: 72,
+    maxStreamingBitrateKbps: 30000,
     codec: 'av1',
     enablePoseSmoothing: true,
     posePredictionFactor: 1.0,

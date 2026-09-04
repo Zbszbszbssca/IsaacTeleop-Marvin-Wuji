@@ -25,6 +25,25 @@ SPDX-License-Identifier: Apache-2.0
 It is designed to address the data bottleneck in robot learning by streamlining device integration;
 standardizing high-fidelity human demo data collection; and foster device & data interoperability.
 
+### DexVerse Marvin/Wuji compatibility branch
+
+This branch pins the IsaacTeleop v1.0.193 integration validated by the
+DexVerse Marvin Pro + dual WUJI pipeline. It differs from upstream in three
+small, intentional places:
+
+- the synthetic-hands plugin uses each controller's OpenXR **grip pose** as
+  the wrist pose and does not require an aim pose;
+- the Quest 3 WebXR profile uses 72 Hz and a 30 Mbit/s AV1 ceiling for lower,
+  more stable WLAN load;
+- the WebXR client consumes the locally downloaded NVIDIA CloudXR 6.1.0 npm
+  archive at `deps/cloudxr/nvidia-cloudxr-6.1.0.tgz`.
+
+The CloudXR npm archive and runtime are not redistributed by this Git
+repository. Install/download them through NVIDIA's supported flow before
+running `npm install`. For the complete four-terminal startup order, ROS 2
+finger topics, and DexVerse commands, follow the Marvin/Wuji section in the
+main `DexVerse-Marvin-Wuji` repository.
+
 ## Key Features
 
 - Unified stack for sim & real teleoperation

@@ -119,11 +119,9 @@ void SyntheticHandsPlugin::worker_thread()
         if (m_left_enabled && left_tracked.data)
         {
             bool grip_valid = false;
-            bool aim_valid = false;
-            oxr_utils::get_grip_pose(*left_tracked.data, grip_valid);
-            XrPosef wrist = oxr_utils::get_aim_pose(*left_tracked.data, aim_valid);
+            XrPosef wrist = oxr_utils::get_grip_pose(*left_tracked.data, grip_valid);
 
-            if (grip_valid && aim_valid)
+            if (grip_valid)
             {
                 if (!m_left_injector)
                 {
@@ -145,11 +143,9 @@ void SyntheticHandsPlugin::worker_thread()
         if (m_right_enabled && right_tracked.data)
         {
             bool grip_valid = false;
-            bool aim_valid = false;
-            oxr_utils::get_grip_pose(*right_tracked.data, grip_valid);
-            XrPosef wrist = oxr_utils::get_aim_pose(*right_tracked.data, aim_valid);
+            XrPosef wrist = oxr_utils::get_grip_pose(*right_tracked.data, grip_valid);
 
-            if (grip_valid && aim_valid)
+            if (grip_valid)
             {
                 if (!m_right_injector)
                 {
